@@ -1,12 +1,13 @@
 #Contains Duplicates
-def contain_duplicate(arr,n):
-    for i in range(n):
-        for j in range(i+1,n):
-            if(arr[i]==arr[j]):
-                return True
-                
-    return False
+# def contain_duplicate(arr,n):
+#     for i in range(n):
+#         for j in range(i+1,n):
+#             if(arr[i]==arr[j]):
+#                 return True
 
-arr=[int(x) for x in input().split()]
+#     return False
 
-print(contain_duplicate(arr,len(arr)))
+# arr=[int(x) for x in input().split()]
+
+# print(contain_duplicate(arr,len(arr)))
+
