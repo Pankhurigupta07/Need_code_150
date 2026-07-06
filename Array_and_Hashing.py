@@ -30,7 +30,7 @@
 
 
 # valid anagram
-# brute force
+# better approch
 # time complexity=O(NlogN)
 # space complexity=O(N)
 
@@ -59,4 +59,31 @@
 # word1=input()
 # word2=input()
 # print(check_anagram(word1,word2))
+
+# brute force
+# def check_anagram(w1,w2):
+#     if(len(w1)!=len(w2)):
+#         return False
+
+#     word2=list(w2)
+
+#     for i in w1:
+#         if i in word2:
+#             word2.remove(i)
+#         else:
+#             return False
+
+#     return True
+        
+# word1=input()
+# word2=input()
+# print(check_anagram(word1,word2))
+
+#time complexity=O(n²)
+#space complexity=O(n)
+
+
+
+
+
 
