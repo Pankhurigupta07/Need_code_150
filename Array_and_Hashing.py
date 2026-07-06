@@ -49,14 +49,14 @@
 # space complexity=O(1)
 # using hash map
 
-from collections import Counter
+# from collections import Counter
 
-def check_anagram(w1,w2):
-    if (Counter(w1)==Counter(w2)):
-        return True
-    return False
+# def check_anagram(w1,w2):
+#     if (Counter(w1)==Counter(w2)):
+#         return True
+#     return False
 
-word1=input()
-word2=input()
-print(check_anagram(word1,word2))
+# word1=input()
+# word2=input()
+# print(check_anagram(word1,word2))
 
