@@ -116,18 +116,21 @@
 
 
 # group anagram
-def group_anagram(arr):
-    anagram_map={}
+# def group_anagram(arr):
+#     anagram_map={}
 
-    for word in arr:
-        sorted_word="".join(sorted(word))
+#     for word in arr:
+#         sorted_word="".join(sorted(word))
 
-        if sorted_word not in anagram_map:
-            anagram_map[sorted_word]=[]
+#         if sorted_word not in anagram_map:
+#             anagram_map[sorted_word]=[]
 
-        anagram_map[sorted_word].append(word)
+#         anagram_map[sorted_word].append(word)
 
-    return list(anagram_map.values())
+#     return list(anagram_map.values())
 
-arr=[ x for x in input().split()]
-print(group_anagram(arr))
+# arr=[ x for x in input().split()]
+# print(group_anagram(arr))
+
+# #time complexity=O(n.klogk)
+# #space complexity=O(n.k)
