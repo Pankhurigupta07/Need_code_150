@@ -34,14 +34,13 @@
 # time complexity=O(NlogN)
 # space complexity=O(N)
 
+# def check_anagram(w1,w2):
+#     if len(w1)!=len(w2):
+#         return False
 
-def check_anagram(w1,w2):
-    if len(w1)!=len(w2):
-        return False
+#     return "".join(sorted(w1))=="".join(sorted(w2))
 
-    return "".join(sorted(w1))=="".join(sorted(w2))
-
-word1=input()
-word2=input()
-print(check_anagram(word1,word2))
+# word1=input()
+# word2=input()
+# print(check_anagram(word1,word2))
 
