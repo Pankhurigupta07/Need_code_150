@@ -99,5 +99,19 @@
 # print(two_sum(num_list,target_num,len(num_list)))
 
 
+# optimal approach 
+# time complexity=O(n)
+# space complexity=O(1)
+
+# def two_sum(arr,t_num,n):
+#     start=0
+#     for i in range(1,n):
+#         if(arr[start]+arr[i]==t_num):
+#             return start,i
+#         start+=1
+
+# num_list=list(map(int,input().split()))
+# target_num=int(input())
+# print(two_sum(num_list,target_num,len(num_list)))
 
 
