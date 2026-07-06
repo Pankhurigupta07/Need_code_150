@@ -83,6 +83,20 @@
 #space complexity=O(n)
 
 
+# two sum 
+# brute force
+# time complexity=O(n²)
+# space complexity=O(1)
+# def two_sum(l,t_num,n):
+#     for i in range(n):
+#         for j in range(1,n):
+#             if(l[i]+l[j]==t_num):
+#                 index=i,j
+#     return index
+
+# num_list=list(map(int,input().split()))
+# target_num=int(input())
+# print(two_sum(num_list,target_num,len(num_list)))
 
 
 
