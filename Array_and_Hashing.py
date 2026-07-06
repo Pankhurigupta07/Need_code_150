@@ -115,3 +115,19 @@
 # print(two_sum(num_list,target_num,len(num_list)))
 
 
+# group anagram
+def group_anagram(arr):
+    anagram_map={}
+
+    for word in arr:
+        sorted_word="".join(sorted(word))
+
+        if sorted_word not in anagram_map:
+            anagram_map[sorted_word]=[]
+
+        anagram_map[sorted_word].append(word)
+
+    return list(anagram_map.values())
+
+arr=[ x for x in input().split()]
+print(group_anagram(arr))
