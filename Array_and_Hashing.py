@@ -215,6 +215,7 @@
 #product of array except self
 
 # def product_of_array_except_self(arr,n):
+# brute force
     
 #     l=[]
     
@@ -234,3 +235,21 @@
 # time complexity=O(n²)
 # space complexity=O(n)
 
+# brute force approach
+
+# import math
+# def product_of_array_except_self(arr,n):
+#     l=[]
+#     for i in range(n):
+#         left_prod=math.prod(arr[:i])
+#         right_prod=math.prod(arr[i+1:])
+#         a=left_prod*right_prod
+#         l.append(a)
+
+#     return l
+
+# arr=[int(x) for x in input().split()]
+# print(product_of_array_except_self(arr,len(arr)))
+
+#time complexity=O(n²)
+#space complexity=O(n)
