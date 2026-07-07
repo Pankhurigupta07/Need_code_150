@@ -154,23 +154,26 @@
 
 # optimal approach
 
-from collections import Counter
-def top_k_frequent_elements(arr,k):
+# from collections import Counter
+# def top_k_frequent_elements(arr,k):
 
-    count=Counter(arr)
+#     count=Counter(arr)
 
-    bucket=[ [] for _ in range(len(arr)+1)]
+#     bucket=[ [] for _ in range(len(arr)+1)]
 
-    for num, freq in count.items():
-        bucket[freq].append(num)
+#     for num, freq in count.items():
+#         bucket[freq].append(num)
         
-    result=[]
-    for i in range(len(bucket)-1,0,-1):
-        for num in bucket[i]:
-            result.append(num)
-            if len(result)==k:
-                return result
+#     result=[]
+#     for i in range(len(bucket)-1,0,-1):
+#         for num in bucket[i]:
+#             result.append(num)
+#             if len(result)==k:
+#                 return result
 
-arr=list(map(int,input().split()))
-k=int(input())
-print(top_k_frequent_elements(arr,k))
+# arr=list(map(int,input().split()))
+# k=int(input())
+# print(top_k_frequent_elements(arr,k))
+
+# time complexity=O(N)
+# space complexity=O(N)
