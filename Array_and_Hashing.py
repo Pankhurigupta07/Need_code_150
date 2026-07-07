@@ -134,3 +134,20 @@
 
 # #time complexity=O(n.klogk)
 # #space complexity=O(n.k)
+
+
+# top k frequent elements
+# better approch
+from collections import Counter
+def top_k_frequent_elements(arr,k):
+
+    frequency=Counter(arr)
+    sorted_frequency=(frequency.most_common(k))
+    return[item[0] for item in sorted_frequency]
+    
+arr=list(map(int,input().split()))
+k=int(input())
+print(top_k_frequent_elements(arr,k))
+
+#Time Complexity: O(NlogK)
+# space complexity:O(N)
