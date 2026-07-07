@@ -211,3 +211,25 @@
 
 # time complexity=O(N)
 # space complexity=O(1)
+
+#product of array except self
+
+def product_of_array_except_self(arr,n):
+    
+    l=[]
+    
+    for i in range(n):
+        product=1
+        for j in arr:
+            product=product*j
+
+        a=product//arr[i]
+        l.append(a)
+        
+    return l
+
+arr=[int(x) for x in input().split()]
+print(product_of_array_except_self(arr,len(arr)))
+
+# time complexity=O(n²)
+# space complexity=O(n)
