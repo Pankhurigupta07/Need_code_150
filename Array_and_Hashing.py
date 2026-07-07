@@ -214,22 +214,23 @@
 
 #product of array except self
 
-def product_of_array_except_self(arr,n):
+# def product_of_array_except_self(arr,n):
     
-    l=[]
+#     l=[]
     
-    for i in range(n):
-        product=1
-        for j in arr:
-            product=product*j
+#     for i in range(n):
+#         product=1
+#         for j in arr:
+#             product=product*j
 
-        a=product//arr[i]
-        l.append(a)
+#         a=product//arr[i]
+#         l.append(a)
         
-    return l
+#     return l
 
-arr=[int(x) for x in input().split()]
-print(product_of_array_except_self(arr,len(arr)))
+# arr=[int(x) for x in input().split()]
+# print(product_of_array_except_self(arr,len(arr)))
 
 # time complexity=O(n²)
 # space complexity=O(n)
+
