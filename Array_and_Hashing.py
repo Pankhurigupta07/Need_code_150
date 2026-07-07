@@ -136,13 +136,13 @@
 # #space complexity=O(n.k)
 
 
-# top k frequent elements
-# better approch
+#top k frequent elements
+#better approch
 # from collections import Counter
 # def top_k_frequent_elements(arr,k):
 
 #     frequency=Counter(arr)
-#     sorted_frequency=(frequency.most_common(k))
+#     sorted_frequency=frequency.most_common(k)
 #     return[item[0] for item in sorted_frequency]
     
 # arr=list(map(int,input().split()))
@@ -151,3 +151,26 @@
 
 #Time Complexity: O(NlogK)
 # space complexity:O(N)
+
+# optimal approach
+
+from collections import Counter
+def top_k_frequent_elements(arr,k):
+
+    count=Counter(arr)
+
+    bucket=[ [] for _ in range(len(arr)+1)]
+
+    for num, freq in count.items():
+        bucket[freq].append(num)
+        
+    result=[]
+    for i in range(len(bucket)-1,0,-1):
+        for num in bucket[i]:
+            result.append(num)
+            if len(result)==k:
+                return result
+
+arr=list(map(int,input().split()))
+k=int(input())
+print(top_k_frequent_elements(arr,k))
