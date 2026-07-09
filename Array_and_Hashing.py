@@ -273,7 +273,47 @@
 #     return result
 
 # arr=[int(x) for x in input().split()]
-print(product_of_array_except_self(arr))
+# print(product_of_array_except_self(arr))
 
 # Time complexity=O(N)
 # Space complexity=O(1)
+
+
+# valid sudoku
+def is_valid_sudoku(board):
+    rows=[0]*9
+    cols=[0]*9
+    squares=[0]*9
+
+    for r in range(9):
+        for c in range(9):
+            if(board[r][c]=="."):
+                continue
+
+            val=int(board[r][c])-1
+            if(1 << val) & rows[r]:
+                return False
+
+            if(1 << val) & cols[r]:
+                return False
+
+            if(1 << val) & squares[ (r//3) * 3 + (c//3) ]:
+                return False
+
+            rows[r] |= (1 << val)
+            cols[c] |= (1 << val)
+            squares[ (r//3) * 3 + (c//3) ] |= (1 << val)
+
+    return True
+
+user_board=[input().split() for _ in range(9)]
+
+if(is_valid_sudoku(user_board)):
+    print("Valid")
+
+else:
+    print("Invalid")
+
+
+
+            
