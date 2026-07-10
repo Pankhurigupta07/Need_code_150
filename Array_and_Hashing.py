@@ -315,7 +315,7 @@
 #     print("Invalid")
 
 # Time complexity=O(N²)
-# Space complexity=O(N)
+Space complexity=O(N)
 
 
 
