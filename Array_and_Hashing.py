@@ -318,5 +318,43 @@
 # Space complexity=O(N)
 
 
+# longest consecutive sequence
+# brute force 
+# time complexity=O(NlogN)
+# space complexity=O(N)
+
+def longest_consecutive_sequence(arr):
+
+    if not arr:
+        return []
+
+    arr.sort()
+
+    longest=[]
+    current_sub_long=[arr[0]]
+    n=len(arr)
+    for i in range(1,n):
+        if (arr[i]==arr[i-1]+1):
+            current_sub_long.append(arr[i])
+        
+        elif(arr[i]==arr[i-1]):
+            continue
+
+        else:
+            longest.append(current_sub_long)
+
+            current_sub_long=[arr[i]]
+
+    longest.append(current_sub_long)
+
+    longest_list=max(longest,key=len)
+    return longest_list
+
+arr=[int(x) for x in input().split()]
+print(longest_consecutive_sequence(arr))
+
+
+
+
 
             
