@@ -3,19 +3,19 @@
 #time complexity=O(n)
 #space complexity=O(1)
 # valid palindrome
-def valid_palindrome(word):
+# def valid_palindrome(word):
 
-    n=len(word)
+#     n=len(word)
 
-    for i in range ((n//2)):
-        if word[i]!=word[n-i-1]:
-            return False 
+#     for i in range ((n//2)):
+#         if word[i]!=word[n-i-1]:
+#             return False 
 
-    return True
+#     return True
 
-word=input()
-if(valid_palindrome(word)):
-    print("Valid")
+# word=input()
+# if(valid_palindrome(word)):
+#     print("Valid")
 
-else:
-    print("Invalid")
+# else:
+#     print("Invalid")
