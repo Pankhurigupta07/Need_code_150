@@ -323,35 +323,35 @@
 # time complexity=O(NlogN)
 # space complexity=O(N)
 
-def longest_consecutive_sequence(arr):
+# def longest_consecutive_sequence(arr):
 
-    if not arr:
-        return []
+#     if not arr:
+#         return []
 
-    arr.sort()
+#     arr.sort()
 
-    longest=[]
-    current_sub_long=[arr[0]]
-    n=len(arr)
-    for i in range(1,n):
-        if (arr[i]==arr[i-1]+1):
-            current_sub_long.append(arr[i])
+#     longest=[]
+#     current_sub_long=[arr[0]]
+#     n=len(arr)
+#     for i in range(1,n):
+#         if (arr[i]==arr[i-1]+1):
+#             current_sub_long.append(arr[i])
         
-        elif(arr[i]==arr[i-1]):
-            continue
+#         elif(arr[i]==arr[i-1]):
+#             continue
 
-        else:
-            longest.append(current_sub_long)
+#         else:
+#             longest.append(current_sub_long)
 
-            current_sub_long=[arr[i]]
+#             current_sub_long=[arr[i]]
 
-    longest.append(current_sub_long)
+#     longest.append(current_sub_long)
 
-    longest_list=max(longest,key=len)
-    return longest_list
+#     longest_list=max(longest,key=len)
+#     return longest_list
 
-arr=[int(x) for x in input().split()]
-print(longest_consecutive_sequence(arr))
+# arr=[int(x) for x in input().split()]
+# print(longest_consecutive_sequence(arr))
 
 
 
