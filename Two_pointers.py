@@ -45,3 +45,41 @@
 # else:
 #     print("Invalid")
 
+# two sum without two pointer
+# optimal approach 
+# time complexity=O(n)
+# space complexity=O(1)
+
+# def two_sum(arr,target):
+#     n=len(arr)
+#     start=0
+#     for i in range(1,n):
+#         if arr[i]+arr[start]==target:
+#             return start,i
+#         start+=1
+#     return index
+
+# arr=[int(x) for x in input().split()]
+# target=int(input())
+# print(two_sum(arr,target))
+
+# two pointer
+def two_sum(arr,target):
+    n=len(arr)
+    start=0
+    end=n-1
+    
+    while start<end:
+        if arr[start]+arr[end]==target:
+            return[start,end]
+        elif arr[start]+arr[end]<target:
+            start+=1
+        else:
+            end-=1
+    return []
+
+arr=[int(x) for x in input().split()]
+target=int(input())
+print(two_sum(arr,target))
+
+
