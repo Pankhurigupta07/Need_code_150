@@ -88,40 +88,42 @@
 
 
 # Three sum
+# optimal approach
+# time complexity=O(n²)
+# space complexity=O(1)
 
+# def three_sum(arr):
+#     n=len(arr)
+#     result=[]
+#     arr.sort()
 
-def three_sum(arr):
-    n=len(arr)
-    result=[]
-    arr.sort()
+#     for i in range(n):
 
-    for i in range(n):
+#         if i>0 and arr[i]==arr[i-1]:
+#             continue
 
-        if i>0 and arr[i]==arr[i-1]:
-            continue
+#         start=i+1
+#         end=n-1
 
-        start=i+1
-        end=n-1
+#         while start<end:
+#             current_sum=arr[i]+arr[start]+arr[end]
+#             if current_sum==0:
+#                 result.append([arr[i],arr[start],arr[end]])
 
-        while start<end:
-            current_sum=arr[i]+arr[start]+arr[end]
-            if current_sum==0:
-                result.append([arr[i],arr[start],arr[end]])
+#                 start+=1
+#                 end-=1
 
-                start+=1
-                end-=1
-
-                while start<end  and arr[start]==arr[start-1]:
-                    start+=1
-                while start<end  and arr[end]==arr[end+1]:
-                    end-=1
+#                 while start<end  and arr[start]==arr[start-1]:
+#                     start+=1
+#                 while start<end  and arr[end]==arr[end+1]:
+#                     end-=1
                 
-            elif current_sum<0:
-                start+=1
-            else:
-                end-=1
+#             elif current_sum<0:
+#                 start+=1
+#             else:
+#                 end-=1
 
-    return result
+#     return result
 
-arr=[int(x) for x in input().split()]
-print(three_sum(arr))
+# arr=[int(x) for x in input().split()]
+# print(three_sum(arr))
