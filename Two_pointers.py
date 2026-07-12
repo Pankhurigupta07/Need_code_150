@@ -127,3 +127,32 @@
 
 # arr=[int(x) for x in input().split()]
 # print(three_sum(arr))
+
+# optimal solution
+# Container with the most water
+# time complexity=O(n)
+# space complexity=O(1)
+
+# def Container_with_the_most_water(arr):
+#     n=len(arr)
+#     start=0
+#     end=n-1
+#     vol=0
+
+#     while start<end:
+#         width=end-start
+#         if(arr[start]<arr[end]):
+#             current_vol=arr[start]*width
+#             vol=max(vol,current_vol)
+#             start+=1
+
+#         else:
+#             current_vol=arr[end]*width
+#             vol=max(vol,current_vol)
+#             end-=1
+
+#     return vol
+
+# arr=[int(x) for x in input().split()]
+# print(Container_with_the_most_water(arr))
+
