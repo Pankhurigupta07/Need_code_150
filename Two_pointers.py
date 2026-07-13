@@ -161,38 +161,66 @@
 # time complexity=O(n)
 # space complexity=O(1)
 
-def Trapping_rain_water(height):
+# def Trapping_rain_water(height):
 
-    if not height or len(height)<3:
-        return 0
+#     if not height or len(height)<3:
+#         return 0
 
-    n=len(height)
-    left=0
-    right=n-1
-    left_max=0
-    right_max=0
-    total_water=0
+#     n=len(height)
+#     left=0
+#     right=n-1
+#     left_max=0
+#     right_max=0
+#     total_water=0
 
-    while left<right:
-        if height[left]<=height[right]:
-            if height[left]>=left_max:
-                left_max=height[left]
+#     while left<right:
+#         if height[left]<=height[right]:
+#             if height[left]>=left_max:
+#                 left_max=height[left]
 
-            else:
-                total_water+= left_max-height[left]
+#             else:
+#                 total_water+= left_max-height[left]
 
-            left+=1
+#             left+=1
+
+#         else:
+#             if height[right]>=right_max:
+#                 right_max=height[right]
+
+#             else:
+#                 total_water+= right_max-height[right]
+
+#             right-=1
+
+#     return total_water
+
+# arr=[int(x) for x in input().split()]
+# print(Trapping_rain_water(arr))
+
+# longest substring without repeating characters
+
+def longest_substring_without_repeating_characters(word):
+
+    start=0
+    nextt=0
+    new_word=""
+    max_len=0
+
+    while nextt<len(word):
+
+        if word[nextt] not in new_word:
+            new_word+=word[nextt]
+            nextt+=1
+            max_len=max(max_len,len(new_word))
 
         else:
-            if height[right]>=right_max:
-                right_max=height[right]
+            start+=1
+            new_word=word[start:nextt]
+            
+    return max_len
+        
+word=input()
+print(longest_substring_without_repeating_characters(word))
 
-            else:
-                total_water+= right_max-height[right]
 
-            right-=1
 
-    return total_water
-
-arr=[int(x) for x in input().split()]
-print(Trapping_rain_water(arr))
