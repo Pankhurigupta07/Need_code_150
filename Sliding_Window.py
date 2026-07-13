@@ -1,7 +1,7 @@
 # Best time to buy and sell
 # optimal solution
 # time complexity=O(n)
-# space complexity=
+# space complexity=O(1)
 # def buy_and_sell(arr):
 #     n=len(arr)
 #     buy=0
@@ -14,7 +14,6 @@
 
 #         else:
 #             buy=sell
-
 
 #     return max_profit
 

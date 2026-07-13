@@ -156,3 +156,43 @@
 # arr=[int(x) for x in input().split()]
 # print(Container_with_the_most_water(arr))
 
+# Trapping rain water
+# optimal solution
+# time complexity=O(n)
+# space complexity=O(1)
+
+def Trapping_rain_water(height):
+
+    if not height or len(height)<3:
+        return 0
+
+    n=len(height)
+    left=0
+    right=n-1
+    left_max=0
+    right_max=0
+    total_water=0
+
+    while left<right:
+        if height[left]<=height[right]:
+            if height[left]>=left_max:
+                left_max=height[left]
+
+            else:
+                total_water+= left_max-height[left]
+
+            left+=1
+
+        else:
+            if height[right]>=right_max:
+                right_max=height[right]
+
+            else:
+                total_water+= right_max-height[right]
+
+            right-=1
+
+    return total_water
+
+arr=[int(x) for x in input().split()]
+print(Trapping_rain_water(arr))
