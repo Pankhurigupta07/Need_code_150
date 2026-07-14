@@ -236,6 +236,8 @@
 # space complexity=O(n)
 
 # brute force approach
+#time complexity=O(n²)
+#space complexity=O(n)
 
 # import math
 # def product_of_array_except_self(arr,n):
@@ -251,8 +253,7 @@
 # arr=[int(x) for x in input().split()]
 # print(product_of_array_except_self(arr,len(arr)))
 
-#time complexity=O(n²)
-#space complexity=O(n)
+
 
 # optimal approach
 
