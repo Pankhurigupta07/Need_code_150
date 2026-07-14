@@ -198,7 +198,7 @@
 # print(Trapping_rain_water(arr))
 
 # longest substring without repeating characters
-# optimal solution
+# brute force
 # time complexity=O(n²)
 # space comlplexity=O(n)
 
