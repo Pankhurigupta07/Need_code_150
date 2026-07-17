@@ -73,35 +73,78 @@
 # time complexity=O(n)
 # space complexity=O(1)
 
-def longest_repeating_character_replacement(word,k):
-    max_count={}
-    left=0
-    max_frequency=0
-    max_lenght=0
+# def longest_repeating_character_replacement(word,k):
+#     max_count={}
+#     left=0
+#     max_frequency=0
+#     max_lenght=0
 
-    for right in range(len(word)):
-        max_count[word[right]]= max_count.get(word[right],0)+1
-        # if word[right] in max_count:
-            #max_count[word[right]]+=1
-        #else:
-            #max_count[word[right]]=1
-        max_frequency=max(max_frequency,max_count[word[right]])
+#     for right in range(len(word)):
+#         max_count[word[right]]= max_count.get(word[right],0)+1
+#         # if word[right] in max_count:
+#             #max_count[word[right]]+=1
+#         #else:
+#             #max_count[word[right]]=1
+#         max_frequency=max(max_frequency,max_count[word[right]])
 
-        if(right-left+1)-max_frequency>k:
-            max_count[word[left]]-=1
-            left+=1
-        max_lenght=max(max_lenght,right-left+1)
+#         if(right-left+1)-max_frequency>k:
+#             max_count[word[left]]-=1
+#             left+=1
+#         max_lenght=max(max_lenght,right-left+1)
     
-    return max_lenght
+#     return max_lenght
 
-word=input()
-k=int(input())
-print(longest_repeating_character_replacement(word,k))
+# word=input()
+# k=int(input())
+# print(longest_repeating_character_replacement(word,k))
 
+#  permutation_in_string
+# optimal solution
+# time complexity=O(n)
+# space complexity=O(1)
 
+def permutation_in_string(word1,word2):
 
+    if len(word1)> len(word2):
+        return False
 
+    word1_mp={}
+    
+    for s in range(len(word1)):
+        if word1[s] in word1_mp:
+            word1_mp[word1[s]]+=1
+        else:
+            word1_mp[word1[s]]=1
 
+    word2_mp={}
+    match=0
+    left=0
+    required=len(word1_mp)
+    for right in range(len(word2)):
+        char_in=word2[right]
+
+        if char_in in word1_mp:
+            word2_mp[char_in]=word2_mp.get(char_in,0)+1
+            if word1_mp[char_in]==word2_mp[char_in]:
+                match+=1
+
+        if right-left+1>len(word1):
+            char_out=word2[left]
+
+            if char_out in word1_mp:
+                if word2_mp[char_out]==word1_mp[char_out]:
+                    match-=1
+                word2_mp[char_out]-=1
+            left+=1
+
+        if match==required:
+            return True
+
+    return False
+
+word1=input()
+word2=input()
+print(permutation_in_string(word1,word2))
 
 
 
