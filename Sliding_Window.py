@@ -103,48 +103,48 @@
 # time complexity=O(n)
 # space complexity=O(1)
 
-def permutation_in_string(word1,word2):
+# def permutation_in_string(word1,word2):
 
-    if len(word1)> len(word2):
-        return False
+#     if len(word1)> len(word2):
+#         return False
 
-    word1_mp={}
+#     word1_mp={}
     
-    for s in range(len(word1)):
-        if word1[s] in word1_mp:
-            word1_mp[word1[s]]+=1
-        else:
-            word1_mp[word1[s]]=1
+#     for s in range(len(word1)):
+#         if word1[s] in word1_mp:
+#             word1_mp[word1[s]]+=1
+#         else:
+#             word1_mp[word1[s]]=1
 
-    word2_mp={}
-    match=0
-    left=0
-    required=len(word1_mp)
-    for right in range(len(word2)):
-        char_in=word2[right]
+#     word2_mp={}
+#     match=0
+#     left=0
+#     required=len(word1_mp)
+#     for right in range(len(word2)):
+#         char_in=word2[right]
 
-        if char_in in word1_mp:
-            word2_mp[char_in]=word2_mp.get(char_in,0)+1
-            if word1_mp[char_in]==word2_mp[char_in]:
-                match+=1
+#         if char_in in word1_mp:
+#             word2_mp[char_in]=word2_mp.get(char_in,0)+1
+#             if word1_mp[char_in]==word2_mp[char_in]:
+#                 match+=1
 
-        if right-left+1>len(word1):
-            char_out=word2[left]
+#         if right-left+1>len(word1):
+#             char_out=word2[left]
 
-            if char_out in word1_mp:
-                if word2_mp[char_out]==word1_mp[char_out]:
-                    match-=1
-                word2_mp[char_out]-=1
-            left+=1
+#             if char_out in word1_mp:
+#                 if word2_mp[char_out]==word1_mp[char_out]:
+#                     match-=1
+#                 word2_mp[char_out]-=1
+#             left+=1
 
-        if match==required:
-            return True
+#         if match==required:
+#             return True
 
-    return False
+#     return False
 
-word1=input()
-word2=input()
-print(permutation_in_string(word1,word2))
+# word1=input()
+# word2=input()
+# print(permutation_in_string(word1,word2))
 
 
 
