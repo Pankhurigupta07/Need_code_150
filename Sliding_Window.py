@@ -147,8 +147,7 @@
 # print(permutation_in_string(word1,word2))
 
 
-# Minimum Window Substring
-# optimal solution
+# Minimum Window Substring with optimal approach
 # time complexity=O(M+N)
 # space complexity=O(1)
 
