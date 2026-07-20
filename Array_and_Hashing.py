@@ -354,6 +354,8 @@
 # arr=[int(x) for x in input().split()]
 # print(longest_consecutive_sequence(arr))
 
+
+# longest consecutive sequence
 # optimal solution
 # time complexity=O(n)
 # space complexity=O(n)
