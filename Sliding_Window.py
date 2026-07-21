@@ -98,7 +98,7 @@
 # k=int(input())
 # print(longest_repeating_character_replacement(word,k))
 
-#  permutation_in_string
+# permutation in string
 # optimal solution
 # time complexity=O(n)
 # space complexity=O(1)
