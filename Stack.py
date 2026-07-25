@@ -1,4 +1,5 @@
 #Stack Question
+# using push pop operation
 # Valid Parentheses
 # optimal solution
 # time complexity=O(n)
