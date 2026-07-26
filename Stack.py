@@ -111,22 +111,22 @@
 # Stack complexity=O(n)
 
 
-def DailyTemperatures(Temperatures):
+# def DailyTemperatures(Temperatures):
 
-    n=len(Temperatures)
-    res=[0]*n
-    stack=[]
+#     n=len(Temperatures)
+#     res=[0]*n
+#     stack=[]
 
-    for i in range(n):
-        current_temp=Temperatures[i]
+#     for i in range(n):
+#         current_temp=Temperatures[i]
 
-        while stack and current_temp>Temperatures[stack[-1]]:
-            prev_temp=stack.pop()
-            res[prev_temp]=i-prev_temp
+#         while stack and current_temp>Temperatures[stack[-1]]:
+#             prev_temp=stack.pop()
+#             res[prev_temp]=i-prev_temp
         
-        stack.append(i)
+#         stack.append(i)
 
-    return res
+#     return res
 
-Temp=list(map(int,input().split()))
-print(DailyTemperatures(Temp))
+# Temp=list(map(int,input().split()))
+# print(DailyTemperatures(Temp))
