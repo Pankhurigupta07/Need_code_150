@@ -31,3 +31,45 @@
 
 # Parentheses=input()
 # print(Valid_Parenthese(Parentheses))
+
+
+# Min Stack 
+# Optimal Solution
+# Time complexity=O(1)
+# Stack complexity=O(n)
+
+class MinStack:
+
+    def __init__(self):
+        self.main_stack=[]
+        self.min_stack=[]
+
+    def push(self, val):
+        self.main_stack.append(val)
+
+        if (len(self.min_stack)==0 or val<=self.min_stack[-1]):
+            self.min_stack.append(val)
+
+    def pop(self):
+        
+        if self.main_stack[-1]==self.min_stack[-1]:
+            self.min_stack.pop()
+
+        self.main_stack.pop()
+
+    def top(self):
+        return self.main_stack[-1]
+
+    def GetMin(self):
+        return self.min_stack[-1]
+
+s=MinStack()
+s.push(2)
+s.push(6)
+s.push(9)
+s.pop()
+print(f"Min is: {s.GetMin()}")
+print(f"Top is: {s.top()}")
+s.push(1)
+print(f"Min is: {s.GetMin()}")
+
