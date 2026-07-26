@@ -80,28 +80,53 @@
 # Stack complexity=O(n)
 
 
-class Solution:
-    def __init__(self):
-        self.stack=[]
+# class Solution:
+#     def __init__(self):
+#         self.stack=[]
 
-    def evalRPN(self,tokens):
-        for tkn in tokens:
-            if tkn=="+":
-                self.stack.append(self.stack.pop()+self.stack.pop())
-            elif tkn=="-":
-                a,b=self.stack.pop(),self.stack.pop()
-                self.stack.append(b-a)
-            elif tkn=="*":
-                self.stack.append(self.stack.pop()*self.stack.pop())
-            elif tkn=="/":
-                a,b=self.stack.pop(),self.stack.pop()
-                self.stack.append(int(b/a))
-            else:
-                self.stack.append(int(tkn))
+#     def evalRPN(self,tokens):
+#         for tkn in tokens:
+#             if tkn=="+":
+#                 self.stack.append(self.stack.pop()+self.stack.pop())
+#             elif tkn=="-":
+#                 a,b=self.stack.pop(),self.stack.pop()
+#                 self.stack.append(b-a)
+#             elif tkn=="*":
+#                 self.stack.append(self.stack.pop()*self.stack.pop())
+#             elif tkn=="/":
+#                 a,b=self.stack.pop(),self.stack.pop()
+#                 self.stack.append(int(b/a))
+#             else:
+#                 self.stack.append(int(tkn))
 
-        return self.stack.pop()
+#         return self.stack.pop()
 
-S=Solution()
-tokens=input().split()
-print(S.evalRPN(tokens))
+# S=Solution()
+# tokens=input().split()
+# print(S.evalRPN(tokens))
 
+# Daily Temperatures
+# Optimal Solution
+# Time complexity=O(n)
+# Stack complexity=O(n)
+
+
+def DailyTemperatures(Temperatures):
+
+    n=len(Temperatures)
+    res=[0]*n
+    stack=[]
+
+    for i in range(n):
+        current_temp=Temperatures[i]
+
+        while stack and current_temp>Temperatures[stack[-1]]:
+            prev_temp=stack.pop()
+            res[prev_temp]=i-prev_temp
+        
+        stack.append(i)
+
+    return res
+
+Temp=list(map(int,input().split()))
+print(DailyTemperatures(Temp))
