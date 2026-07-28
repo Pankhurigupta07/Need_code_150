@@ -129,3 +129,29 @@
 
 # Temp=list(map(int,input().split()))
 # print(DailyTemperatures(Temp))
+
+
+# Car fleet
+# Optimal Solution
+# Time complexity=O(nlogn)
+# Stack complexity=O(n)
+
+
+# def carFleet( target,position,speed):
+
+#     car=sorted(zip(position,speed),reverse=True)
+
+#     stack=[]
+#     for pos,spd in car:
+#         time=(target-pos)/spd
+#         stack.append(time)
+
+#         if len(stack)>=2 and stack[-1]<=stack[-2]:
+#             stack.pop()
+
+#     return len(stack)
+
+# target=int(input())
+# position=[int(x) for x in input().split()]
+# speed=[int(x) for x in input().split()]
+# print(carFleet(target,position,speed))
