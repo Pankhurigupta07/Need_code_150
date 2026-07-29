@@ -155,3 +155,33 @@
 # position=[int(x) for x in input().split()]
 # speed=[int(x) for x in input().split()]
 # print(carFleet(target,position,speed))
+
+
+# Largest rectangle in histogram
+# Optimal Solution
+# Time complexity=O(n)
+# Stack complexity=O(n)
+
+
+# def lar_rec_in_hgram(heights):
+
+#     max_rec_area=0
+#     stack=[]
+
+#     for i,h in enumerate(heights):
+#         start=i
+
+#         while stack and stack[-1][1]>h:
+#             index,height=stack.pop()
+#             max_rec_area=max(max_rec_area,height*(i-index))
+#             start=index
+
+#         stack.append((start,h))
+
+#     for i,h in stack:
+#         max_rec_area=max(max_rec_area,h*(len(heights)-i))
+
+#     return max_rec_area
+
+# heights=[int(x) for x in input().split()]
+# print(lar_rec_in_hgram(heights))
