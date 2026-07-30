@@ -56,3 +56,39 @@
 #     matrix.append(row)
 # target=int(input())
 # print(Search_in_2D_matrix(matrix,target))
+
+# optimal approach
+# Time complexity=O(logm*n)
+# Space complexity=O(1)
+
+# def Search_in_2D_Matrix(Matrix,target):
+#     rows=len(Matrix)
+#     cols=len(Matrix[0])
+
+#     start=0
+#     end=(rows*cols)-1
+
+#     while start<=end:
+#         mid=(start+end)//2
+
+#         row=mid//cols
+#         col=mid % cols
+
+#         if Matrix[row][col]==target:
+#             return True
+
+#         elif Matrix[row][col]<target:
+#             start=mid+1
+
+#         else:
+#             end=mid-1
+
+#     return False
+
+# rows=int(input("Enter the no. of rows: "))
+# Matrix=[]
+# for r in range(rows):
+#     row=list(map(int,input().split()))
+#     Matrix.append(row)
+# target=int(input())
+# print(Search_in_2D_Matrix(Matrix,target))
