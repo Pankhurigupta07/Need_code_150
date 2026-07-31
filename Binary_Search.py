@@ -184,3 +184,62 @@
 # target=int(input())
 # print(findTarget(nums,target))
 
+
+# Time based key value store
+# optimal solution
+# Time complexity=O(logn)
+# Space complexity=O(m*n)
+
+# class TimeMap:
+    
+#     def __init__(self):
+#         self.store={}
+
+#     def set(self,key,value,timestamp):
+#         if key not in self.store:
+#             self.store[key]=[]
+#         self.store[key].append((value,timestamp))
+
+#     def get(self,key,timestamp):
+#         if key not in self.store:
+#             return "Not Available In Store"
+
+#         arr=self.store[key]
+#         ans=""
+#         low=0
+#         high=len(arr)-1
+
+#         while low<=high:
+#             mid=(low+high)//2
+#             if arr[mid][1]<=timestamp:
+#                 ans=arr[mid][0]
+#                 low=mid+1
+        
+#             else:
+#                 high=mid-1
+
+#         return ans
+
+# Obj=TimeMap()
+# Obj.set("Icecream","chocolate",1)
+# Obj.set("Icecream","vanila",3)
+# Obj.set("Icecream","strawberry",4)
+# print(Obj.get("Icecream",3))
+# print(Obj.get("Icecream",7))
+# Obj.set("Icecream","Butterscotch",7)
+# print(Obj.get("Icecream",9))
+
+# Obj.set("food", "samosa", 5)
+# Obj.set("food", "pizza", 15)
+# Obj.set("food", "burger", 30)
+
+# print(Obj.get("food", 5))   
+# print(Obj.get("food", 2))   
+# print(Obj.get("food", 10))  
+# print(Obj.get("food", 20))  
+# print(Obj.get("food", 30))  
+# print(Obj.get("food", 100)) 
+
+# print(Obj.get("coding", 10)) 
+
+
