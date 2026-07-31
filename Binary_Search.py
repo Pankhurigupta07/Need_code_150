@@ -94,3 +94,32 @@
 # print(Search_in_2D_Matrix(Matrix,target))
 
 
+# Koko Eating bananas
+# optimal solution
+# tc=O(n log m)
+# sc=O(1)
+
+# from math import ceil
+# def MinEatingSpeed(piles,H):
+
+#     low=1
+#     high=max(piles)
+
+#     while low<high:
+#         mid=(low+high)//2
+
+#         total_hours=0
+#         for p in piles:
+#             total_hours+=ceil(p/mid)
+
+#         if total_hours<=H:
+#             high=mid
+
+#         else:
+#             low=mid+1
+
+#     return low
+
+# piles=[int(x) for x in input().split()]
+# H=int(input())
+# print(MinEatingSpeed(piles,H))
