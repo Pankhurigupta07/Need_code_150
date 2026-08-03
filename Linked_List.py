@@ -76,6 +76,8 @@
 
 # Merge two sorted list
 # optimal solution
+# Time complexity=O(M+N)
+# Space complexity=O(1)
 
 # class ListNode:
 #     def __init__(self,val=0,next=None):
