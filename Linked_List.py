@@ -134,7 +134,57 @@
 # display_Linked_List(merge)
 
 
+# Linked List cycle
+# optimal approach using slow fast pointer
+# time complexity=O(n)
+# space complexity=O(1)
 
+class Node:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+
+def Creating_Linked_List(arr,pos):
+    if not arr:
+        return None
+
+    head=Node(int(arr[0]))
+    curr = head
+    for val in arr[1:]:
+        curr.next=Node(int(val))
+        curr=curr.next
+
+    if pos!=-1:
+        target=head
+        for _ in range(pos):
+            target=target.next
+            curr.next=target
+
+    return head
+
+def has_cycle(head):
+    slow=head
+    fast=head
+
+    while fast and fast.next:
+        slow=slow.next
+        fast=fast.next.next
+
+        if slow==fast:
+            return True
+
+    return False
+
+arr=[2,4,7,8,6,1,3]
+pos=2
+ll=Creating_Linked_List(arr,pos)
+print(has_cycle(ll))
+
+
+arr=[1,4,6,7]
+pos=-1
+ll=Creating_Linked_List(arr,pos)
+print(has_cycle(ll))
 
 
 
