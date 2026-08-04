@@ -186,7 +186,84 @@
 # ll=Creating_Linked_List(arr,pos)
 # print(has_cycle(ll))
 
+# Reorder list
+# optimal solution
 
+class Node:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+
+def Create_Linked_List(arr):
+    if not arr:
+        return None
+    head=Node(int(arr[0]))
+    curr=head
+    for val in arr[1:]:
+        curr.next=Node(int(val))
+        curr=curr.next
+    return head
+
+def reorder_List(head):
+
+    if not head or not head.next:
+        return
+
+    slow=head
+    fast=head.next
+
+    while fast and fast.next:
+        slow=slow.next
+        fast=fast.next.next
+
+    second=slow.next
+    slow.next=None
+
+    prev=None
+    curr=second
+
+    while curr:
+        nxt=curr.next
+        curr.next=prev
+        prev=curr
+        curr=nxt
+
+    second=prev
+
+    first=head
+    while second:
+        temp1=first.next
+        temp2=second.next
+
+        first.next=second
+        second.next=temp1
+
+        first=temp1
+        second=temp2
+
+    return first
+
+def display_Linked_List(head):
+
+    curr=head
+    while curr:
+        print(curr.val,end="->")
+        curr=curr.next
+
+    print("None")
+
+
+arr=["1","3","7","9","8","6","2"]
+ll=Create_Linked_List(arr)
+
+print("Original List:")
+display_Linked_List(ll)
+
+
+reorder_List(ll)
+
+print("Reordered List:")
+display_Linked_List(ll)
 
 
 
