@@ -269,4 +269,59 @@
 
 
 
+#Remove Nth Node From End of List
+# optimal solution using fast slow pointer
+# time complexity=O(n)
+# space complexity=O(1)
+
+
+class Node:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+
+def Create_Linked_List(arr):
+    if not arr:
+        return None
+
+    head=Node(int(arr[0]))
+    curr=head
+    for val in arr[1:]:
+        curr.next=Node(int(val))
+        curr=curr.next
+    return head   
+
+def Remove_nth_node(head,n):
+
+    dummy=Node(0,head)
+    slow=dummy
+    fast=dummy
+
+    for _ in range(n+1):
+        fast=fast.next
     
+    while fast:
+        slow=slow.next
+        fast=fast.next
+
+    slow.next=slow.next.next
+
+    return dummy.next
+
+def Display_Linked_List(head):
+
+    curr=head
+    while curr:
+        print(curr.val,end="->")
+        curr=curr.next
+    
+    print("None")
+
+
+arr=["1","4","2","3","7","8","9"]
+n=int(input())
+
+ll=Create_Linked_List(arr)
+Display_Linked_List(ll)
+modified_ll=Remove_nth_node(ll,n)
+Display_Linked_List(modified_ll)
