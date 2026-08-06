@@ -399,3 +399,75 @@
 
 # Copied_clone=Copy_random_list(Original)
 # Display_Linked_List(Copied_clone)
+
+
+# Add two numbers
+# optimal solution
+# time complexity=O(max(n,m))
+# space complexity=O(1)
+
+class Node:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+
+def Create_Linked_List(arr):
+    if not arr:
+        return None
+    
+    head=Node(arr[0])
+    curr=head
+    for val in arr[1:]:
+        curr.next=Node(val)
+        curr=curr.next
+
+    return head
+
+def Add_two_numbers(l1,l2):
+    dummy=Node(0)
+    curr=dummy
+    carry=0
+
+    while l1 or l2 or carry:
+        l1_val=l1.val if l1 else 0
+        l2_val=l2.val if l2 else 0
+
+        total=l1_val+l2_val+carry
+        carry=total//10
+        new_val=total%10
+
+        curr.next=Node(new_val)
+        curr=curr.next
+
+        if l1:
+            l1=l1.next 
+        if l2:
+            l2=l2.next
+
+    return dummy.next
+
+def Display_Linked_List(head):
+    
+    curr=head
+    while curr:
+        print(curr.val,end="->")
+        curr=curr.next
+    print("None")
+
+
+l1=Create_Linked_List([2,4,3])
+l2=Create_Linked_List([5,6,4])
+Display_Linked_List(l1)
+Display_Linked_List(l2)
+
+result=Add_two_numbers(l1,l2)
+Display_Linked_List(result)
+
+l1=Create_Linked_List([9,9,9,9])
+l2=Create_Linked_List([9,9])
+Display_Linked_List(l1)
+Display_Linked_List(l2)
+result=Add_two_numbers(l1,l2)
+Display_Linked_List(result)
+
+
