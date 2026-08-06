@@ -476,50 +476,50 @@
 # time complexity=O(n)
 # space complexity=O(1)
 
-class Node:
-    def __init__(self,val=0,next=None):
+# class Node:
+#     def __init__(self,val=0,next=None):
 
-        self.val=val
-        self.next=next
+#         self.val=val
+#         self.next=next
 
-def Create_Linked_List(arr):
-    head=Node(arr[0])
-    curr=head
-    for val in arr[1:]:
-        curr.next=Node(val)
-        curr=curr.next
-    return head
+# def Create_Linked_List(arr):
+#     head=Node(arr[0])
+#     curr=head
+#     for val in arr[1:]:
+#         curr.next=Node(val)
+#         curr=curr.next
+#     return head
 
-def Display_Linked_List(head):
-    curr=head
-    while curr:
-        print(curr.val,end="->")
-        curr=curr.next
-    print("None")
+# def Display_Linked_List(head):
+#     curr=head
+#     while curr:
+#         print(curr.val,end="->")
+#         curr=curr.next
+#     print("None")
 
-def Find_Duplicate(nums):
-    slow=nums[0]
-    fast=nums[0]
+# def Find_Duplicate(nums):
+#     slow=nums[0]
+#     fast=nums[0]
 
-    while True:
-        slow=nums[slow]
-        fast=nums[nums[fast]]
+#     while True:
+#         slow=nums[slow]
+#         fast=nums[nums[fast]]
 
-        if slow==fast:
-            break
+#         if slow==fast:
+#             break
     
 
-    slow=nums[0]
-    while slow!=fast:
-        slow=nums[slow]
-        fast=nums[fast]
-    return slow
+#     slow=nums[0]
+#     while slow!=fast:
+#         slow=nums[slow]
+#         fast=nums[fast]
+#     return slow
 
-nums=[1,2,3,7,4,5,8,6,6,6]
-ll=Create_Linked_List(nums)
-Display_Linked_List(ll)
-print(nums)
-duplicate=Find_Duplicate(nums)
-print(duplicate)
-# n+1 input dena hai (if n=4 means=1,2,3,4(n) and 1 and more for duplicate(2,2))
+# nums=[1,2,3,7,4,5,8,6,6,6]
+# ll=Create_Linked_List(nums)
+# Display_Linked_List(ll)
+# print(nums)
+# duplicate=Find_Duplicate(nums)
+# print(duplicate)
+# # n+1 input dena hai (if n=4 means=1,2,3,4(n) and 1 and more for duplicate(2,2))
 
