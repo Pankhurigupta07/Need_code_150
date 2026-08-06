@@ -331,71 +331,71 @@
 # time complexity=O(n)
 # space complexity=O(1)
 
-class Node:
-    def __init__(self,val=0,next=None,random=None):
-        self.val=val
-        self.next=next
-        self.random=random
+# class Node:
+#     def __init__(self,val=0,next=None,random=None):
+#         self.val=val
+#         self.next=next
+#         self.random=random
 
-def Creating_Linked_List(values,random_indicies):
+# def Creating_Linked_List(values,random_indicies):
 
-    if not values:
-        return None
+#     if not values:
+#         return None
 
-    nodes=[Node(val) for val in values]
+#     nodes=[Node(val) for val in values]
 
-    for i in range(len(nodes)-1):
-        nodes[i].next=nodes[i+1]
+#     for i in range(len(nodes)-1):
+#         nodes[i].next=nodes[i+1]
     
-    for i ,r_idx in enumerate(random_indicies):
-        if r_idx  is not None:
-            nodes[i].random=nodes[r_idx]
+#     for i ,r_idx in enumerate(random_indicies):
+#         if r_idx  is not None:
+#             nodes[i].random=nodes[r_idx]
 
-    return nodes[0]
+#     return nodes[0]
 
-def Display_Linked_List(head):
+# def Display_Linked_List(head):
     
-    curr=head
-    while curr:
-        random_val=curr.random.val if curr.random else None
-        print(f"[V:{curr.val}|R:{random_val}]",end="->")
-        curr=curr.next
+#     curr=head
+#     while curr:
+#         random_val=curr.random.val if curr.random else None
+#         print(f"[V:{curr.val}|R:{random_val}]",end="->")
+#         curr=curr.next
 
-    print("None")
+#     print("None")
 
-def Copy_random_list(head):
-    if not head:
-        return None
+# def Copy_random_list(head):
+#     if not head:
+#         return None
 
-    curr=head
-    while curr:
-        clone=Node(curr.val,curr.next)
-        curr.next=clone
-        curr=clone.next
+#     curr=head
+#     while curr:
+#         clone=Node(curr.val,curr.next)
+#         curr.next=clone
+#         curr=clone.next
 
-    curr=head
+#     curr=head
 
-    while curr:
-        if curr.random:
-            curr.next.random=curr.random.next
-        curr=curr.next.next
+#     while curr:
+#         if curr.random:
+#             curr.next.random=curr.random.next
+#         curr=curr.next.next
 
-    curr=head
-    clone_head=head.next
-    clone_curr=clone_head
+#     curr=head
+#     clone_head=head.next
+#     clone_curr=clone_head
 
-    while curr:
-        curr.next=curr.next.next
-        clone_curr.next=clone_curr.next.next if clone_curr.next else None
-        curr=curr.next
-        clone_curr=clone_curr.next
+#     while curr:
+#         curr.next=curr.next.next
+#         clone_curr.next=clone_curr.next.next if clone_curr.next else None
+#         curr=curr.next
+#         clone_curr=clone_curr.next
 
-    return clone_head
+#     return clone_head
 
-values=[7,2,6,4,1,3,9]
-random_indicies=[None,1,0,2,4,6,5]
-Original=Creating_Linked_List(values,random_indicies)
-Display_Linked_List(Original)
+# values=[7,2,6,4,1,3,9]
+# random_indicies=[None,1,0,2,4,6,5]
+# Original=Creating_Linked_List(values,random_indicies)
+# Display_Linked_List(Original)
 
-Copied_clone=Copy_random_list(Original)
-Display_Linked_List(Copied_clone)
+# Copied_clone=Copy_random_list(Original)
+# Display_Linked_List(Copied_clone)
