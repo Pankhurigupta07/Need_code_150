@@ -523,3 +523,40 @@
 # print(duplicate)
 # # n+1 input dena hai (if n=4 means=1,2,3,4(n) and 1 and more for duplicate(2,2))
 
+# LRU chache
+# optimal solution
+# time complexity=O(1)
+# space complexity=O(n)
+
+from collections import OrderedDict
+class LRUCache:
+    def __init__(self,capacity):
+        self.cache=OrderedDict()
+        self.capacity=capacity
+
+    def get(self,key):
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self,key,value):
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key]=value
+
+        if len(self.cache)>self.capacity:
+            self.cache.popitem(last=False)
+
+Cache=LRUCache(3)
+Cache.put(1,10)
+Cache.put(2,20)
+print(Cache.get(1))
+Cache.put(3,30)
+Cache.put(1,100)
+Cache.put(2,200)
+print(Cache.get(1))
+print(Cache.get(2))
+Cache.put(4,40)
+Cache.put(5,50)
+print(Cache.get(7))
