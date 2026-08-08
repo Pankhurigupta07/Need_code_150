@@ -560,3 +560,67 @@
 # Cache.put(4,40)
 # Cache.put(5,50)
 # print(Cache.get(7))
+
+# Merge K lists 
+# optimal solution
+# Time complexity: O(nlogk)
+# space complexity:O(k)
+
+class Node:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+
+class Solution:
+    def mergeKlists(self,lists):
+        if not lists or len(lists)==0:
+            return None
+
+        while len(lists)>1:
+            merge_lists=[]
+            for i in range(0,len(lists),2):
+                l1=lists[i]
+                l2=lists[i+1] if (i+1) < len(lists) else None
+                merge_lists.append(self.merge2lists(l1,l2))
+            lists=merge_lists
+        return lists[0]
+
+    def merge2lists(self,l1,l2):
+        dummy=Node(0)
+        curr=dummy
+
+        while l1 and l2:
+            if l1.val < l2.val:
+                curr.next=l1
+                l1=l1.next
+            else:
+                curr.next=l2
+                l2=l2.next
+            curr=curr.next
+
+        curr.next=l1 if l1 else l2
+        return dummy.next
+
+def Create_Linked_List(arr):
+    head=Node(arr[0])
+    curr=head
+    for val in arr[1:]:
+        curr.next=Node(val)
+        curr=curr.next
+    return head
+
+def Display_Linked_List(head):
+    curr=head
+    while curr:
+        print(curr.val,end="->")
+        curr=curr.next
+    print("None")
+
+l1=Create_Linked_List([1,2,4,6])
+l2=Create_Linked_List([3,4,7,9])
+l3=Create_Linked_List([6,7,8,9])
+l4=Create_Linked_List([2,3,7,8])
+
+sol=Solution()
+result=sol.mergeKlists([l1,l2,l3,l4])
+Display_Linked_List(result)
