@@ -630,65 +630,65 @@
 # time complexity=O(n)
 # space complexity=O(1)
 
-class Node:
-    def __init__(self,val=0,next=None):
-        self.val=val
-        self.next=next
-class Solution:
+# class Node:
+#     def __init__(self,val=0,next=None):
+#         self.val=val
+#         self.next=next
+# class Solution:
     
-    def reverseKgroups(self,head,k):
-        dummy=Node(0,head)
-        groupPrev=dummy
+#     def reverseKgroups(self,head,k):
+#         dummy=Node(0,head)
+#         groupPrev=dummy
 
-        while True:
-            kth=self.getknodes(groupPrev,k)
-            if not kth:
-                break
-            groupNext=kth.next
+#         while True:
+#             kth=self.getknodes(groupPrev,k)
+#             if not kth:
+#                 break
+#             groupNext=kth.next
 
-            prev=kth.next
-            curr=groupPrev.next
+#             prev=kth.next
+#             curr=groupPrev.next
 
-            while curr!=groupNext:
-                temp=curr.next
-                curr.next=prev
-                prev=curr
-                curr=temp
+#             while curr!=groupNext:
+#                 temp=curr.next
+#                 curr.next=prev
+#                 prev=curr
+#                 curr=temp
 
-            temp=groupPrev.next
-            groupPrev.next=kth
-            groupPrev=temp
+#             temp=groupPrev.next
+#             groupPrev.next=kth
+#             groupPrev=temp
 
-        return dummy.next
+#         return dummy.next
 
-    def getknodes(self,curr,k):
-        while curr and k>0:
-            curr=curr.next
-            k-=1
-        return curr
+#     def getknodes(self,curr,k):
+#         while curr and k>0:
+#             curr=curr.next
+#             k-=1
+#         return curr
 
-def Create_Linked_List(arr):
-    if not arr:
-        return None
+# def Create_Linked_List(arr):
+#     if not arr:
+#         return None
 
-    head=Node(arr[0])
-    curr=head
-    for val in arr[1:]:
-        curr.next=Node(val)
-        curr=curr.next
-    return head
+#     head=Node(arr[0])
+#     curr=head
+#     for val in arr[1:]:
+#         curr.next=Node(val)
+#         curr=curr.next
+#     return head
 
-def Display_Linked_List(head):
-    curr=head
-    while curr:
-        print(curr.val,end="->")
-        curr=curr.next
-    print("None")
+# def Display_Linked_List(head):
+#     curr=head
+#     while curr:
+#         print(curr.val,end="->")
+#         curr=curr.next
+#     print("None")
 
-arr=[int(x) for x in input().split()]
-ll=Create_Linked_List(arr)
-k=int(input())
-Display_Linked_List(ll)
-Sol=Solution()
-result=Sol.reverseKgroups(ll,k)
-Display_Linked_List(result)
+# arr=[int(x) for x in input().split()]
+# ll=Create_Linked_List(arr)
+# k=int(input())
+# Display_Linked_List(ll)
+# Sol=Solution()
+# result=Sol.reverseKgroups(ll,k)
+# Display_Linked_List(result)
