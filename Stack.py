@@ -187,25 +187,3 @@
 # print(lar_rec_in_hgram(heights))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
