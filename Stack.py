@@ -186,14 +186,3 @@
 # heights=[int(x) for x in input().split()]
 # print(lar_rec_in_hgram(heights))
 
-
-
-
-
-
-
-
-
-
-
-
